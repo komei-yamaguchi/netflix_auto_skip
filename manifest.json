@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Netflix Auto Skip",
+  "version": "1.0",
+  "description": "Automatically skip intros and next episode screens on Netflix.",
+  "permissions": ["activeTab", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "images/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.netflix.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "128": "images/icon128.png"
+  }
+}
